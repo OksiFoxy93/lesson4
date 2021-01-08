@@ -105,7 +105,8 @@ function createTimer() {
 let timer = createTimer();
 alert('!');
 alert( timer() );
-
+// Вот тут я тоже не до конца понимаю когда создается переменная t1, когда отрабатывает функция, то есть на строке 107?
+// Я расчитываю на этот исход)
 
 // 2
 function createAdder(a) {

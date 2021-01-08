@@ -81,22 +81,45 @@ console.log(result);
 
 // 7
 function setComment (date, message, author="Anonymous") {
-    if ((date && message) == undefined) {
+    if ((date && message) === undefined) {
         return (alert("Данные переданы некорректно"))
     }else {
         console.log(`${author}, ${date}\n${message}`)
     }
 }
 
-
 setComment('2016-11-02', 'Everything is ok', 'John');
+// Правда мне тут непонятно, если я не введу дату, но введу остальные два параметра, она сработает.
 
 
+// ЗАМЫКАНИЯ
+// 1
+function createTimer() {
+    let t0 = performance.now();
+    return function() {
+        let t1 = performance.now();
+        return t1 - t0;
+    }
+}
+
+let timer = createTimer();
+alert('!');
+alert( timer() );
 
 
+// 2
+function createAdder(a) {
+    return function (b) {
+        return a + b;
+    };
+}
 
+var hello = createAdder('Hello, ');
+alert( hello('John') );
 
-
+var plus = createAdder(5);
+alert( plus(1) );
+alert( plus(5) );
 
 
 
